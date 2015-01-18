@@ -1,0 +1,9 @@
+# Platform-specific excludes
+thumbs.db
+.DS_Store
+
+# Packer-specific excludes
+packer_cache
+
+# Do not include final products in the repo
+boxes

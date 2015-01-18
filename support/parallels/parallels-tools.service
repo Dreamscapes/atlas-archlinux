@@ -1,0 +1,9 @@
+[Unit]
+Description=Parallels Tools
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/systemd/scripts/prltoolsd start
+ExecStop=/usr/lib/systemd/scripts/prltoolsd stop
+RemainAfterExit=yes
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+--- /root/iso/installer/install-kmods.sh	2015-01-17 14:48:21.000000000 +0100
++++ /root/iso/installer/install-kmods.sh	2015-01-17 15:18:04.000000000 +0100
+@@ -219,6 +219,9 @@
+ 				# Unpack kernel module sources
+ 				tar -xzf "$KMOD_DIR/$PRL_MOD.$TGZEXT" -C "$KMOD_DIR"
+
++				# Apply patch for Linux kernel 3.18
++				patch "$KMOD_DIR/prl_eth/pvmnet/pvmnet.c" /root/parallels/pvmnet.c.diff
++
+ 				# Build kernel module
+ 				make -C "$KMOD_DIR" -f Makefile.kmods
+ 				result=$?

@@ -1,0 +1,11 @@
+--- /etc/default/grub	2015-01-17 19:52:43.321311738 +0000
++++ /etc/default/grub	2015-01-17 19:53:30.565375688 +0000
+@@ -2,7 +2,7 @@
+ GRUB_TIMEOUT=5
+ GRUB_DISTRIBUTOR="Arch"
+ GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+-GRUB_CMDLINE_LINUX=""
++GRUB_CMDLINE_LINUX="clocksource=acpi_pm"
+
+ # Preload both GPT and MBR modules so that they are not missed
+ GRUB_PRELOAD_MODULES="part_gpt part_msdos"
