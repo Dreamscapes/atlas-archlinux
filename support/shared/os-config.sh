@@ -13,9 +13,6 @@ localectl set-keymap us
 # Configure timezone to UTC - a sane default, I believe...
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
 
-# Update RTC (for systems that have it)
-hwclock --systohc --utc
-
 # Set up initial ramdisk
 mkinitcpio -p linux
 
