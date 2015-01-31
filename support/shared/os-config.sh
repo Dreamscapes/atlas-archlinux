@@ -30,3 +30,6 @@ systemctl enable sshd.service
 
 # Clean all downloaded packages and caches to save as much space as possible
 pacman -S --clean --clean --noconfirm
+
+# Do not modify ls and prompts for all new users
+patch -p 0 -i /root/shared/bashrc.diff
