@@ -15,9 +15,10 @@ Only the absolutely necessary configuration has been done in order for the machi
 - Keyboard is set to `us` (override with `localectl set-keymap ???`)
 - Timezone is set to UTC
 - root password is empty (**set one after installation to secure your box**)
-- user & group `vagrant` has been added, with default password being *vagrant*
+- user & group `vagrant` has been added, with default password being *vagrant* (**reset it after installation to secure your box**)
 - user `vagrant` has passwordless `sudo` enabled
 - ssh is enabled in order for Vagrant to be able to manage the VM
+- USB 2.0 is enabled, for your convenience
 
 ### Installed packages
 
@@ -45,9 +46,9 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities
+- Parallels Guest Utilities (provided by Parallels Desktop 10.1.3 build 28868)
 
-Note that with the latest kernel, 3.18, a patch was required in order for the guest utilities to install correctly due to a signature change in one of functions provided by the kernel. This means that you might not be able to easily update the guest utilities yourself.
+Note that with the latest kernel, 3.18, a patch was required in order for the guest utilities to install correctly due to a signature change in one of functions provided by the kernel. This means that you might not be able to easily update the guest utilities yourself. You can find the required patch in this repository, if you are brave enough.
 
 #### VMWare
 
