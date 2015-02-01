@@ -8,7 +8,9 @@ The images have been built using [Packer](https://www.packer.io) and published t
 
 ## Configuration
 
-Only the absolutely necessary configuration has been done in order for the machine to work in a Vagrant environment:
+Only the absolutely necessary configuration has been done in order for the machine to work in a Vagrant environment.
+
+### OS info
 
 - All drives are formatted as `ext4` on a MBR partition table
 - Locale is set to `en_GB.UTF-8` (override with `localectl set-locale ???`)
@@ -18,7 +20,16 @@ Only the absolutely necessary configuration has been done in order for the machi
 - user & group `vagrant` has been added, with default password being *vagrant* (**reset it after installation to secure your box**)
 - user `vagrant` has passwordless `sudo` enabled
 - ssh is enabled in order for Vagrant to be able to manage the VM
-- USB 2.0 is enabled, for your convenience
+
+### HW info
+
+- CPUs: 2
+- Execution cap: left default (100%)
+- RAM: 1024 MB
+- USB: Enabled (2.0)
+- Sound: left default
+
+> Hardware configuration can easily be tweaked to your liking via Vagrantfile. See [https://docs.vagrantup.com/v2/providers/configuration.html](Provider configuration).
 
 ### Installed packages
 
