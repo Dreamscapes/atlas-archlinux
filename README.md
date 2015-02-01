@@ -4,7 +4,7 @@
 
 ## Build recipe
 
-The images have been built using [Packer](https://www.packer.io). The build recipe can be found on [Github](https://github.com/Dreamscapes/atlas-archlinux).
+The images have been built using [Packer](https://www.packer.io) and published to [Atlas](https://atlas.hashicorp.com/dreamscapes/boxes/archlinux).
 
 ## Configuration
 
