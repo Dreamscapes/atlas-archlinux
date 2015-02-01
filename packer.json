@@ -5,7 +5,7 @@
     "isochecksum": null,
     "isochecksumtype": null,
     "cpus": 2,
-    "ramsize": 512,
+    "ramsize": 1024,
     "vramsize": 16,
     "disksize": 65536,
     "outdir": "boxes",
