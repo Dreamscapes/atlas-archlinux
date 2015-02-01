@@ -105,7 +105,11 @@
       "disk_type_id": 0,
       "vmx_data": {
         "memsize": "{{user `ramsize`}}",
-        "numvcpus": "{{user `cpus`}}"
+        "numvcpus": "{{user `cpus`}}",
+        "usb.present": "TRUE",
+        "ehci.present": "TRUE",
+        "usb.pcislotnumber": "-1",
+        "ehci.pciSlotNumber": "0"
       }
     }
   ],
