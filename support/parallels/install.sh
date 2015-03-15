@@ -9,10 +9,6 @@ export def_sysconfdir=/etc/init.d
 pacman -S python2 linux-headers --needed --noconfirm
 ln -sf /usr/bin/python2 /usr/bin/python
 
-# Patching time! Patch the install script so that it will patch the actual file that needs patching.
-# I call this a thought-through approach! :)
-patch -p 0 -i /root/parallels/install-kmods.sh.diff
-
 # Since the booted kernel might be different than the one which will be used on the target machine
 # (because the installation image might be outdated) we need to link the linux headers so that
 # when parallels looks for headers for `uname -r`, it will find our current headers
