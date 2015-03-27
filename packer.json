@@ -26,7 +26,7 @@
       "headless": true,
       "boot_wait": "5s",
       "boot_command": [
-        "<enter><wait10><wait5>",
+        "<enter><wait10><wait10>",
         "vi /etc/ssh/sshd_config <enter>",
         "<esc>/PermitRootLogin<enter><esc>^x",
         "<esc>/PermitEmptyPasswords<enter><esc>^x$xxayes<esc>",
@@ -59,7 +59,7 @@
       "ssh_wait_timeout": "2m",
       "boot_wait": "5s",
       "boot_command": [
-        "<enter><wait10><wait5>",
+        "<enter><wait10><wait10>",
         "vi /etc/ssh/sshd_config <enter>",
         "<esc>/PermitRootLogin<enter><esc>^x",
         "<esc>/PermitEmptyPasswords<enter><esc>^x$xxayes<esc>",
@@ -91,7 +91,7 @@
       "headless": true,
       "boot_wait": "5s",
       "boot_command": [
-        "<enter><wait10><wait5>",
+        "<enter><wait10><wait10>",
         "vi /etc/ssh/sshd_config <enter>",
         "<esc>/PermitRootLogin<enter><esc>^x",
         "<esc>/PermitEmptyPasswords<enter><esc>^x$xxayes<esc>",
