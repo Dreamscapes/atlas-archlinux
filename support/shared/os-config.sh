@@ -13,9 +13,6 @@ localectl set-keymap us
 # Configure timezone to UTC - a sane default, I believe...
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
 
-# Set up initial ramdisk
-mkinitcpio -p linux
-
 # Enable DHCP on all adapters
 systemctl enable dhcpcd.service
 
