@@ -14,7 +14,7 @@ mv /root/shared/vagrant-insecure-key.pub /home/vagrant/.ssh/authorized_keys
 
 # Protect the homefolder and ssh keys
 chown -R vagrant:vagrant /home/vagrant
-chmod -R g-rw,o-rw /home/vagrant/.ssh
+chmod -R g-rwx,o-rwx /home/vagrant/.ssh
 
 # Allow passwordless sudo for vagrant
 echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
