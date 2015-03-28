@@ -14,8 +14,8 @@ mkfs.ext4 /dev/sda2
 
 # Mount the newly created filesystems
 mkdir -p /mnt
-mkdir -p /mnt/boot
 mount /dev/sda2 /mnt
+mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 # Override pacman repos (the primary one is too slow for my network :) )
