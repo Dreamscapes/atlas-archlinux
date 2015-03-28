@@ -7,8 +7,8 @@ echo 'en_GB.UTF-8 UTF-8' > /etc/locale.gen
 echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
 # Me likes British English
-localectl set-locale LANG=en_GB.UTF-8
-localectl set-keymap us
+echo LANG=en_GB.UTF-8 > /etc/locale.conf
+echo KEYMAP=us > /etc/vconsole.conf
 
 # Configure timezone to UTC - a sane default, I believe...
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
