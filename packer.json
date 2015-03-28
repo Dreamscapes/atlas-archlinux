@@ -9,7 +9,7 @@
     "vramsize": 16,
     "disksize": 65536,
     "outdir": "boxes",
-    "shutdowncmd": "systemctl poweroff"
+    "shutdowncmd": "sudo systemctl poweroff"
   },
   "builders": [
     {
