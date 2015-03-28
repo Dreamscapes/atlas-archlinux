@@ -16,13 +16,11 @@ ln -s /usr/share/zoneinfo/UTC /etc/localtime
 # Enable DHCP on all adapters
 systemctl enable dhcpcd.service
 
-# Install and configure bootloader
-pacman -S grub --noconfirm --needed
+# Configure bootloader
 grub-install --target=i386-pc --recheck /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# Install and configure ssh
-pacman -S openssh --noconfirm --needed
+# Enable ssh on this machine
 systemctl enable sshd.service
 
 # Clean all downloaded packages and caches to save as much space as possible
