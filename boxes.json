@@ -105,6 +105,7 @@
       "type": "vagrant-cloud",
       "box_tag": "dreamscapes/archlinux",
       "version": "{{user `archversion`}}",
+      "version_description": "Arch Linux release {{user `archversion`}}\n\n> For detailed information about the builds head over to [Github](https://github.com/Dreamscapes/atlas-archlinux).",
       "no_release": true,
       "access_token": "{{user `atlastoken`}}"
     }]
