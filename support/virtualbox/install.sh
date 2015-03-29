@@ -6,11 +6,9 @@
 # available for Arch Linux
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 mv /tmp/arm-mirrorlist /etc/pacman.d/mirrorlist
-# Refresh database
-pacman -Syy
 
 # Install VirtualBox Guest Utils without X.Org support
-pacman -S --noconfirm virtualbox-guest-utils-nox
+pacman -Syy --noconfirm virtualbox-guest-utils-nox
 
 # Enable VirtualBox kernel modules
 mkdir -p /etc/modules-load.d

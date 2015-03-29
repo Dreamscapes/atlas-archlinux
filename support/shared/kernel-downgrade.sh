@@ -14,10 +14,8 @@
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 mv /root/shared/arm-mirrorlist /etc/pacman.d/mirrorlist
 
-# Refresh database
-pacman -Syy
 # Install kernel and API headers
-pacman -S --noconfirm linux linux-firmware linux-headers
+pacman -Syy --noconfirm linux linux-firmware linux-headers
 # Blacklist kernel and headers from upgrades
 patch -p 0 -i /root/shared/pacman.conf.diff
 
