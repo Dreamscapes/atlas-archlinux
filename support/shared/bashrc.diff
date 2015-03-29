@@ -1,5 +1,5 @@
---- /etc/skel/.bashrc 2014-12-30 23:08:56.000000000 +0100
-+++ /etc/skel/.bashrc 2015-01-31 17:18:09.101626306 +0100
+--- /etc/skel/.bashrc
++++ /etc/skel/.bashrc
 @@ -4,6 +4,3 @@
 
  # If not running interactively, don't do anything

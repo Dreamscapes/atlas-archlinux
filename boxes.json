@@ -1,0 +1,99 @@
+{
+  "variables": {
+    "archversion": null,
+    "pathtoiso": null,
+    "isochecksum": null,
+    "isochecksumtype": null,
+    "cpus": 2,
+    "ramsize": 1024,
+    "vramsize": 16,
+    "disksize": 65536,
+    "outdir": "boxes",
+    "shutdowncmd": "sudo systemctl poweroff"
+  },
+  "builders": [
+    {
+      "type": "virtualbox-ovf",
+      "source_path": "{{user `outdir`}}/VMs/virtualbox/archlinux-{{user `archversion`}}-base.ovf",
+      "output_directory": "{{user `outdir`}}/virtualbox",
+      "guest_additions_mode": "disable",
+      "vm_name": "archlinux-{{user `archversion`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "2m",
+      "headless": true,
+      "shutdown_command": "{{user `shutdowncmd`}}",
+      "shutdown_timeout": "2m"
+    },
+    {
+      "type": "parallels-pvm",
+      "source_path": "{{user `outdir`}}/VMs/parallels/archlinux-{{user `archversion`}}-base.pvm",
+      "output_directory": "{{user `outdir`}}/parallels",
+      "parallels_tools_flavor": "lin",
+      "parallels_tools_guest_path": "/tmp/prl-tools-{{.Flavor}}.iso",
+      "vm_name": "archlinux-{{user `archversion`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "2m",
+      "reassign_mac": true,
+      "headless": true,
+      "shutdown_command": "{{user `shutdowncmd`}}",
+      "shutdown_timeout": "2m"
+    },
+    {
+      "type": "vmware-vmx",
+      "source_path": "{{user `outdir`}}/VMs/vmware/archlinux-{{user `archversion`}}-base.vmx",
+      "output_directory": "{{user `outdir`}}/vmware",
+      "vm_name": "archlinux-{{user `archversion`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "2m",
+      "headless": true,
+      "shutdown_command": "{{user `shutdowncmd`}}",
+      "shutdown_timeout": "2m"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "support/virtualbox",
+      "destination": "/tmp/virtualbox",
+      "only": [ "virtualbox-ovf" ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/virtualbox-bootstrap.sh",
+      "only": [ "virtualbox-ovf" ]
+    },
+    {
+      "type": "file",
+      "source": "support/parallels",
+      "destination": "/tmp/parallels",
+      "only": [ "parallels-pvm" ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/parallels-bootstrap.sh",
+      "only": [ "parallels-pvm" ]
+    },
+    {
+      "type": "file",
+      "source": "support/vmware",
+      "destination": "/tmp/vmware",
+      "only": [ "vmware-vmx" ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/vmware-bootstrap.sh",
+      "only": [ "vmware-vmx" ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "compression_level": 9,
+      "output": "{{user `outdir`}}/Boxes/archlinux-{{.Provider}}.box",
+      "keep_input_artifact": false
+    }
+  ]
+}

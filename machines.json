@@ -15,10 +15,10 @@
     {
       "type": "virtualbox-iso",
       "guest_os_type": "ArchLinux_64",
-      "output_directory": "{{user `outdir`}}/virtualbox",
+      "output_directory": "{{user `outdir`}}/VMs/virtualbox",
       "guest_additions_mode": "disable",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
-      "vm_name": "archlinux-{{user `archversion`}}",
+      "vm_name": "archlinux-{{user `archversion`}}-base",
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
@@ -49,14 +49,15 @@
     {
       "type": "parallels-iso",
       "guest_os_type": "linux-2.6",
-      "output_directory": "{{user `outdir`}}/parallels",
-      "parallels_tools_flavor": "lin",
+      "output_directory": "{{user `outdir`}}/VMs/parallels",
+      "parallels_tools_mode": "disable",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
-      "vm_name": "archlinux-{{user `archversion`}}",
+      "vm_name": "archlinux-{{user `archversion`}}-base",
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
       "ssh_wait_timeout": "2m",
+      "headless": true,
       "boot_wait": "5s",
       "boot_command": [
         "<enter><wait10><wait10>",
@@ -80,10 +81,10 @@
     {
       "type": "vmware-iso",
       "guest_os_type": "other3xlinux-64",
-      "output_directory": "{{user `outdir`}}/vmware",
+      "output_directory": "{{user `outdir`}}/VMs/vmware",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
-      "vm_name": "archlinux-{{user `archversion`}}",
-      "vmdk_name": "archlinux-{{user `archversion`}}",
+      "vm_name": "archlinux-{{user `archversion`}}-base",
+      "vmdk_name": "archlinux-{{user `archversion`}}-base",
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
@@ -117,52 +118,11 @@
     {
       "type": "file",
       "source": "support/shared",
-      "destination": "/root/shared"
+      "destination": "/tmp/shared"
     },
     {
       "type": "shell",
       "script": "scripts/bootstrap.sh"
-    },
-    {
-      "type": "file",
-      "source": "support/virtualbox",
-      "destination": "/root/virtualbox",
-      "only": [ "virtualbox-iso" ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/virtualbox-bootstrap.sh",
-      "only": [ "virtualbox-iso" ]
-    },
-    {
-      "type": "file",
-      "source": "support/parallels",
-      "destination": "/root/parallels",
-      "only": [ "parallels-iso" ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/parallels-bootstrap.sh",
-      "only": [ "parallels-iso" ]
-    },
-    {
-      "type": "file",
-      "source": "support/vmware",
-      "destination": "/root/vmware",
-      "only": [ "vmware-iso" ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/vmware-bootstrap.sh",
-      "only": [ "vmware-iso" ]
-    }
-  ],
-  "post-processors": [
-    {
-      "type": "vagrant",
-      "compression_level": 9,
-      "output": "{{user `outdir`}}/archlinux-{{.Provider}}.box",
-      "keep_input_artifact": false
     }
   ]
 }

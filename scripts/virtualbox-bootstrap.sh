@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-mv /root/virtualbox /mnt/root/
+cd /
 
-arch-chroot /mnt /root/virtualbox/install.sh
-
-# Cleanup
-rm -rf /mnt/root/virtualbox
+sudo /tmp/virtualbox/install.sh

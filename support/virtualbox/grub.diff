@@ -1,5 +1,5 @@
---- /etc/default/grub	2015-01-17 19:52:43.321311738 +0000
-+++ /etc/default/grub	2015-01-17 19:53:30.565375688 +0000
+--- /etc/default/grub
++++ /etc/default/grub
 @@ -2,7 +2,7 @@
  GRUB_TIMEOUT=5
  GRUB_DISTRIBUTOR="Arch"

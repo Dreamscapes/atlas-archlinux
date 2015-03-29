@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-mv /root/vmware /mnt/root/
+cd /
 
-arch-chroot /mnt /root/vmware/install.sh
-
-# Cleanup
-rm -rf /mnt/root/vmware
+sudo /tmp/vmware/install.sh

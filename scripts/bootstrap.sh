@@ -35,7 +35,7 @@ pacstrap /mnt base base-devel grub openssh
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
 # Copy shared resources required for OS installation under chrooted root homefolder
-mv /root/shared /mnt/root/
+mv /tmp/shared /mnt/root/
 
 # Downgrade kernel...
 arch-chroot /mnt /root/shared/kernel-downgrade.sh

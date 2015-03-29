@@ -7,5 +7,10 @@
 # @copyright    2015 Robert Rossmann
 # @license      http://choosealicense.com/licenses/bsd-3-clause  BSD-3-Clause License
 
-all:
-	packer build -var-file=config.json packer.json
+all: boxes
+
+machines:
+	packer build -var-file config.json machines.json
+
+boxes: machines
+	packer build -var-file config.json boxes.json
