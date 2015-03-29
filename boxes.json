@@ -8,7 +8,7 @@
     "ramsize": 1024,
     "vramsize": 16,
     "disksize": 65536,
-    "outdir": "boxes",
+    "outdir": "{{env `PACKER_OUTDIR`}}",
     "shutdowncmd": "sudo systemctl poweroff"
   },
   "builders": [
