@@ -43,8 +43,7 @@
         [ "modifyvm", "{{.Name}}", "--vram", "{{user `vramsize`}}" ],
         [ "modifyvm", "{{.Name}}", "--memory", "{{user `ramsize`}}" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}" ],
-        [ "modifyvm", "{{.Name}}", "--rtcuseutc", "on" ],
-        [ "modifyvm", "{{.Name}}", "--usb", "on" ]
+        [ "modifyvm", "{{.Name}}", "--rtcuseutc", "on" ]
       ]
     },
     {
@@ -107,11 +106,7 @@
       "disk_type_id": 0,
       "vmx_data": {
         "memsize": "{{user `ramsize`}}",
-        "numvcpus": "{{user `cpus`}}",
-        "usb.present": "TRUE",
-        "ehci.present": "TRUE",
-        "usb.pcislotnumber": "-1",
-        "ehci.pciSlotNumber": "0"
+        "numvcpus": "{{user `cpus`}}"
       }
     }
   ],
