@@ -10,6 +10,14 @@ The images have been built using [Packer](https://www.packer.io) and published t
 
 Only the absolutely necessary configuration has been done in order for the machine to work in a Vagrant environment.
 
+### Kernel info
+
+When it comes to Linux kernel modules, the kernel itself is a moving target - even minor releases may introduce API changes that could break kernel modules used by VM guest utilities. For this reason, the kernel will be upgraded separately from other packages, after it has been verified that all guest utilities are fully compatible with the new kernel version.
+
+This is the only way to enjoy Arch Linux in a fully functional VM environment.
+
+#### Kernel version: 3.18.6-1
+
 ### OS info
 
 - All drives are formatted as `ext4` on a MBR partition table
@@ -26,10 +34,8 @@ Only the absolutely necessary configuration has been done in order for the machi
 - CPUs: 2
 - Execution cap: left default (100%)
 - RAM: 1024 MB
-- USB: Enabled (2.0)
-- Sound: left default
 
-> Hardware configuration can easily be tweaked to your liking via Vagrantfile. See [https://docs.vagrantup.com/v2/providers/configuration.html](Provider configuration).
+> Hardware configuration can easily be tweaked to your liking via Vagrantfile. See [Provider configuration](https://docs.vagrantup.com/v2/providers/configuration.html).
 
 ### Installed packages
 
@@ -45,7 +51,9 @@ The following extra packages are installed to VirtualBox image:
 
 - [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/community/x86_64/virtualbox-guest-utils-nox)
 
-The kernel module `i2c_piix4` has been disabled via */etc/modprobe.d/blacklist.conf*.
+The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
+
+- `i2c_piix4`
 
 The following modules provided by the guest utilities are automatically loaded via */etc/modules-load.d/virtualbox.conf*:
 
@@ -57,15 +65,51 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities (provided by Parallels Desktop 10.1.3 build 28868)
+- Parallels Guest Utilities (provided by Parallels Desktop 10.1.4 build 28883)
 
-Note that with the latest kernel, 3.18, a patch was required in order for the guest utilities to install correctly due to a signature change in one of functions provided by the kernel. This means that you might not be able to easily update the guest utilities yourself. You can find the required patch in this repository, if you are brave enough.
+The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
+
+- `intel_rapl`
 
 #### VMWare
 
-The guest utilities for VMWare are currently not installed, but you are free to install them yourself. Hopefully they will be added in a later release.
+The following extra packages are installed to VMWare image:
+
+- [open-vm-tools](https://www.archlinux.org/packages/community/i686/open-vm-tools)
+- [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms)
+
+The following modules provided by the guest utilities are automatically loaded via */etc/modules-load.d/vmware.conf*:
+
+- `vmw_balloon`
+- `vmhgfs`
+- `vmxnet3`
 
 The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
 
 - `i2c_piix4`
 - `intel_rapl`
+
+## Building the machines locally
+
+#### Required configuration
+
+Packer expects to find the following environment variables on your system:
+
+- `PACKER_OUTDIR`: Directory where all the build artifacts will go
+
+To build the machines for all providers, you will need to have them all installed (this includes the actual virtualisation software **and** their respective SDKs, in case they are distributed separately, i.e. Parallels SDK)
+
+#### Building
+
+The build process is separated into two steps:
+
+1. `make machines` - Build base Arch Linux virtual machines
+1. `make boxes` - Use these virtual machines to install guest utilities and convert them to Vagrant boxes
+
+If you need more granular control over the build process, simply inspect the *Makefile* and use the commands therein directly.
+
+It is also recommended that you remove the `post-processors` section from *boxes.json* to avoid converting the resulting virtual machines into Vagrant boxes and publishing them to *Atlas* (which will fail, because you do not have permission to publish them to **my** account).
+
+## License
+
+This Packer recipe is licensed under the **BSD-3-Clause License**. See the [LICENSE](LICENSE) file for more information.
