@@ -12,9 +12,7 @@
 
 # Set pacman repository to point to the ARM
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-cat <<LIST > /etc/pacman.d/mirrorlist
-Server = http://seblu.net/a/arm/2015/03/18/\$repo/os/\$arch
-LIST
+mv /root/shared/arm-mirrorlist /etc/pacman.d/mirrorlist
 
 # Refresh database
 pacman -Syy

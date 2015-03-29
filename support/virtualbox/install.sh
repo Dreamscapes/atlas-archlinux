@@ -5,9 +5,7 @@
 # Set pacman repository to point to the ARM because VirtualBox requires the most recent kernel
 # available for Arch Linux
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-cat <<LIST > /etc/pacman.d/mirrorlist
-Server = http://seblu.net/a/arm/2015/03/18/\$repo/os/\$arch
-LIST
+mv /tmp/arm-mirrorlist /etc/pacman.d/mirrorlist
 # Refresh database
 pacman -Syy
 

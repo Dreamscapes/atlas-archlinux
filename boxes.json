@@ -57,6 +57,12 @@
   "provisioners": [
     {
       "type": "file",
+      "source": "support/shared/arm-mirrorlist",
+      "destination": "/tmp/arm-mirrorlist",
+      "only": [ "virtualbox-ovf" ]
+    },
+    {
+      "type": "file",
       "source": "support/virtualbox",
       "destination": "/tmp/virtualbox",
       "only": [ "virtualbox-ovf" ]
