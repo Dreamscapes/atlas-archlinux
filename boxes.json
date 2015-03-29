@@ -91,7 +91,6 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "compression_level": 9,
       "output": "{{user `outdir`}}/Boxes/archlinux-{{.Provider}}.box",
       "keep_input_artifact": false
     }
