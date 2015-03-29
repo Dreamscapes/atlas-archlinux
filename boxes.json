@@ -1,4 +1,5 @@
 {
+  "description": "This templates takes virtual machines created with machines.json, installs guest utils and exports them to Vagrant Cloud",
   "variables": {
     "archversion": null,
     "pathtoiso": null,

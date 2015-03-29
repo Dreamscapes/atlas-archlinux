@@ -1,4 +1,5 @@
 {
+  "description": "This template creates virtual machines containing basic Arch Linux installation that can be further worked upon",
   "variables": {
     "archversion": null,
     "pathtoiso": null,
