@@ -25,3 +25,11 @@ umount /mnt/iso
 rm -rf /etc/init.d
 rm -rf /mnt/iso
 rm -rf /var/log/parallels.log # It contains my shared folders! I don't want you guys to see that!:)
+
+
+### Fixes for known errors ###
+
+# Disable intel_rapl - no matter what I do it keeps complaining about no valid rapl domains
+echo "blacklist intel_rapl" >> /etc/modprobe.d/blacklist.conf
+# Regenerate ramdisk
+mkinitcpio -p linux
