@@ -9,6 +9,7 @@
     "vramsize": 16,
     "disksize": 65536,
     "outdir": "{{env `PACKER_OUTDIR`}}",
+    "atlastoken": "{{env `ATLAS_TOKEN`}}",
     "shutdowncmd": "sudo systemctl poweroff"
   },
   "builders": [
@@ -89,10 +90,17 @@
     }
   ],
   "post-processors": [
-    {
+    [{
       "type": "vagrant",
       "output": "{{user `outdir`}}/Boxes/archlinux-{{.Provider}}.box",
       "keep_input_artifact": false
-    }
+    },
+    {
+      "type": "vagrant-cloud",
+      "box_tag": "dreamscapes/archlinux",
+      "version": "{{user `archversion`}}",
+      "no_release": true,
+      "access_token": "{{user `atlastoken`}}"
+    }]
   ]
 }

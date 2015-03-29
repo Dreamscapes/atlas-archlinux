@@ -9,6 +9,7 @@
     "vramsize": 16,
     "disksize": 65536,
     "outdir": "{{env `PACKER_OUTDIR`}}",
+    "atlastoken": "{{env `ATLAS_TOKEN`}}",
     "shutdowncmd": "sudo systemctl poweroff"
   },
   "builders": [
