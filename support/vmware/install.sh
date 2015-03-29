@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /
+
 ### VMWare Guest Utils installation ###
 
 # Put the Arch Linux version information into /etc/arch-release (required by guest utils)

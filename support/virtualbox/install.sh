@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /
+
 ### VirtualBox Guest Utils installation ###
 
 # Set pacman repository to point to the ARM because VirtualBox requires the most recent kernel

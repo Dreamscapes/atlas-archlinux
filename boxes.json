@@ -69,7 +69,7 @@
     },
     {
       "type": "shell",
-      "script": "scripts/virtualbox-bootstrap.sh",
+      "inline": [ "sudo /tmp/virtualbox/install.sh" ],
       "only": [ "virtualbox-ovf" ]
     },
     {
@@ -80,7 +80,7 @@
     },
     {
       "type": "shell",
-      "script": "scripts/parallels-bootstrap.sh",
+      "inline": [ "sudo /tmp/parallels/install.sh" ],
       "only": [ "parallels-pvm" ]
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "type": "shell",
-      "script": "scripts/vmware-bootstrap.sh",
+      "inline": [ "sudo /tmp/vmware/install.sh" ],
       "only": [ "vmware-vmx" ]
     }
   ],

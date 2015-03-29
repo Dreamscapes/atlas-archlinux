@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /
+
 ### Parallels Tools installation ###
 
 # Mount the iso
