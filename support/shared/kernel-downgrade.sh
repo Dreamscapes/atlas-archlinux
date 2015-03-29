@@ -19,7 +19,7 @@ LIST
 # Refresh database
 pacman -Syy
 # Install kernel and API headers
-pacman -S linux linux-firmware linux-headers --noconfirm
+pacman -S --noconfirm linux linux-firmware linux-headers
 # Blacklist kernel and headers from upgrades
 patch -p 0 -i /root/shared/pacman.conf.diff
 

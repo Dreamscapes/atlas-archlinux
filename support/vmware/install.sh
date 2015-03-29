@@ -18,10 +18,10 @@ curl -o /tmp/open-vm-tools-dkms.tar.gz \
 tar -xf /tmp/open-vm-tools-dkms.tar.gz -C /tmp
 chmod -R 777 /tmp/open-vm-tools-dkms
 cd /tmp/open-vm-tools-dkms
-# Build and install!
+# Build and install! We must do this as non-root, otherwise makepkg will blow up
 su vagrant -c 'makepkg --syncdeps --clean --noconfirm --install'
 
-# Enable VMWare kernel modules
+# Enable some VMWare kernel modules
 mkdir -p /etc/modules-load.d
 cat <<LIST > /etc/modules-load.d/vmware.conf
 vmw_balloon
