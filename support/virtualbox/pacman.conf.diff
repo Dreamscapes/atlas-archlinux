@@ -1,0 +1,11 @@
+--- /etc/pacman.conf
++++ /etc/pacman.conf
+@@ -22,7 +22,7 @@
+ Architecture = auto
+
+ # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
+-IgnorePkg    = linux linux-firmware linux-headers
++IgnorePkg    = linux linux-firmware linux-headers virtualbox-guest-utils-nox virtualbox-guest-modules
+ #IgnoreGroup =
+
+ #NoUpgrade   =

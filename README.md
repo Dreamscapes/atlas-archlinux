@@ -58,6 +58,11 @@ The following extra packages are installed to VirtualBox image:
 
 - [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/community/x86_64/virtualbox-guest-utils-nox)
 
+The following packages have been added to pacman upgrade blacklist:
+
+- virtualbox-guest-utils-nox
+- virtualbox-guest-modules
+
 The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
 
 - `i2c_piix4`

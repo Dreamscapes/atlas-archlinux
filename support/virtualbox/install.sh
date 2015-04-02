@@ -20,6 +20,10 @@ vboxsf
 vboxvideo
 LIST
 
+# Prevent guest utilities from being upgraded (they might depend on newer kernel version and cause
+# unresolvable conflict)
+patch -p 0 -i /tmp/virtualbox/pacman.conf.diff
+
 
 ### Fixes for known errors ###
 
