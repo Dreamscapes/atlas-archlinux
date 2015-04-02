@@ -46,6 +46,12 @@ Only the minimum required to get you going has been installed. The following pac
 - base-devel
 - openssh
 
+The following packages have been added to pacman upgrade blacklist:
+
+- linux
+- linux-headers
+- linux-firmware
+
 #### VirtualBox
 
 The following extra packages are installed to VirtualBox image:
