@@ -119,7 +119,7 @@
     },
     {
       "type": "shell",
-      "script": "scripts/bootstrap.sh"
+      "script": "support/bootstrap.sh"
     }
   ]
 }
