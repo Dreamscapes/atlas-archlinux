@@ -1,3 +1,8 @@
+Arch Linux includes a custom .bashrc in the /etc/skel directory that overwrites ls commands and the
+command prompt - I find this highly obtrusive because I like to set these things on a system level.
+Your Vagrant instance will likely be used only by you anyway so it makes even more sense in this
+context.
+
 --- /etc/skel/.bashrc
 +++ /etc/skel/.bashrc
 @@ -4,6 +4,3 @@

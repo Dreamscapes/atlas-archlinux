@@ -1,3 +1,5 @@
+This fixes the "Fast TSC calibration failed" boot error
+
 --- /etc/default/grub
 +++ /etc/default/grub
 @@ -2,7 +2,7 @@

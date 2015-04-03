@@ -1,3 +1,7 @@
+This patch restricts the Linux kernel from being upgraded as it might break guest utilities on some
+platforms. If you know what you are doing, you can revert this patch and upgrade it anyway, but this
+is discouraged unless you are in the business of developing/maintaining kernel modules.
+
 --- /etc/pacman.conf
 +++ /etc/pacman.conf
 @@ -22,7 +22,7 @@
