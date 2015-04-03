@@ -24,6 +24,11 @@ LIST
 # unresolvable conflict)
 patch -p 0 -i /tmp/virtualbox/pacman.conf.diff
 
+# Restore pacman mirrorlist and refresh databases
+rm /etc/pacman.d/mirrorlist
+mv /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
+pacman -Syy
+
 
 ### Fixes for known errors ###
 
@@ -33,10 +38,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Disable i2c_piix4 kernel module to stop complaining about uninitialised SMBus address
 echo "blacklist i2c_piix4" >> /etc/modprobe.d/blacklist.conf
+
+
+### Finalise... ###
+
 # Regenerate ramdisk
 mkinitcpio -p linux
-
-# Restore pacman mirrorlist and refresh databases
-rm /etc/pacman.d/mirrorlist
-mv /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
-pacman -Syy

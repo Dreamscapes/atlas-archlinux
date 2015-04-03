@@ -13,15 +13,13 @@ echo KEYMAP=us > /etc/vconsole.conf
 # Configure timezone to UTC - a sane default, I believe...
 ln -s /usr/share/zoneinfo/UTC /etc/localtime
 
-# Enable DHCP on all adapters
+# Enable required services
 systemctl enable dhcpcd.service
+systemctl enable sshd.service
 
 # Configure bootloader
 grub-install --target=i386-pc --recheck /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-
-# Enable ssh on this machine
-systemctl enable sshd.service
 
 # Clean all downloaded packages and caches to save as much space as possible
 pacman -S --clean --clean --noconfirm

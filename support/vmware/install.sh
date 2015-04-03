@@ -38,5 +38,9 @@ LIST
 echo "blacklist i2c_piix4" >> /etc/modprobe.d/blacklist.conf
 # Disable intel_rapl - no matter what I do it keeps complaining about no valid rapl domains
 echo "blacklist intel_rapl" >> /etc/modprobe.d/blacklist.conf
+
+
+### Finalise... ###
+
 # Regenerate ramdisk
 mkinitcpio -p linux
