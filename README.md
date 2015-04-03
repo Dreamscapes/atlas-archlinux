@@ -6,6 +6,24 @@
 
 The images have been built using [Packer](https://www.packer.io) and published to [Atlas](https://atlas.hashicorp.com/dreamscapes/boxes/archlinux).
 
+## Vagrant
+
+These boxes are made for [Vagrant](https://www.vagrantup.com) - to install this box, simply run:
+
+`vagrant box add dreamscapes/archlinux [--provider parallels|vmware_desktop|virtualbox]`
+
+Alternatively, you can simply specify this box in your [Vagrantfile](https://docs.vagrantup.com/v2/vagrantfile/index.html) and Vagrant will download the box for your default provider automatically:
+
+> You may want to override your default provider by setting an environment variable:
+> `VAGRANT_DEFAULT_PROVIDER=parallels`
+> The above will set Parallels Desktop to be your default virtualisation platform for Vagrant boxes
+
+```ruby
+Vagrant.configure(2) do |config|
+  config.vm.box = "dreamscapes/archlinux"
+end
+```
+
 ## Configuration
 
 Only the absolutely necessary configuration has been done in order for the machine to work in a Vagrant environment.
