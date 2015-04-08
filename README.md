@@ -51,6 +51,7 @@ This is the only way to enjoy Arch Linux in a fully functional VM environment.
 ### HW info
 
 - CPUs: 2
+- HDD: 64 GB, dynamically allocated, with partitions for `/` and `/boot`
 - Execution cap: left default (100%)
 - RAM: 1024 MB
 
