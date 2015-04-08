@@ -29,7 +29,10 @@ rm -rf /var/log/parallels.log # It contains my shared folders! I don't want you 
 
 ### Fixes for known errors ###
 
-# Disable intel_rapl - no matter what I do it keeps complaining about no valid rapl domains
-echo "blacklist intel_rapl" >> /etc/modprobe.d/blacklist.conf
+cat <<LIST >> /etc/modprobe.d/blacklist.conf
+# Disable intel_rapl to stop errors about no valid rapl domains
+blacklist intel_rapl
+LIST
+
 # Regenerate ramdisk
 mkinitcpio -p linux

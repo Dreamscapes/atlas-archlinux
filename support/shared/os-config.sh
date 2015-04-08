@@ -3,8 +3,11 @@
 ### SYSTEM CONFIGURATION ###
 
 # Localisation stuff...
-echo 'en_GB.UTF-8 UTF-8' > /etc/locale.gen
-echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
+cat <<LIST > /etc/locale.gen
+en_GB.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
+LIST
+
 locale-gen
 # Me likes British English
 echo LANG=en_GB.UTF-8 > /etc/locale.conf

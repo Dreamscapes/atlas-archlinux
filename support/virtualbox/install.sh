@@ -36,8 +36,10 @@ pacman -Syy
 patch -p 0 -i /tmp/virtualbox/grub.diff
 grub-mkconfig -o /boot/grub/grub.cfg
 
+cat <<LIST >> /etc/modprobe.d/blacklist.conf
 # Disable i2c_piix4 kernel module to stop complaining about uninitialised SMBus address
-echo "blacklist i2c_piix4" >> /etc/modprobe.d/blacklist.conf
+blacklist i2c_piix4
+LIST
 
 
 ### Finalise... ###
