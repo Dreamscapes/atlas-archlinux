@@ -2,7 +2,7 @@
 
 > A minimal Arch Linux box for you to build upon
 
-## Build recipe
+## Build template
 
 The images have been built using [Packer](https://www.packer.io) and published to [Atlas](https://atlas.hashicorp.com/dreamscapes/boxes/archlinux).
 
@@ -143,4 +143,4 @@ It is also recommended that you remove the `post-processors` section from *boxes
 
 ## License
 
-This Packer recipe is licensed under the **BSD-3-Clause License**. See the [LICENSE](LICENSE) file for more information.
+This Packer template is licensed under the **BSD-3-Clause License**. See the [LICENSE](LICENSE) file for more information.
