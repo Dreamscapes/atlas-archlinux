@@ -8,6 +8,7 @@
     "cpus": 2,
     "ramsize": 1024,
     "vramsize": 16,
+    "vramsizebytes": 16384,
     "disksize": 65536,
     "outdir": "{{env `PACKER_OUTDIR`}}",
     "atlastoken": "{{env `ATLAS_TOKEN`}}",
@@ -85,6 +86,7 @@
       "disk_size": "{{user `disksize`}}",
       "disk_type_id": 0,
       "vmx_data": {
+        "svga.vramSize": "{{user `vramsizebytes`}}",
         "memsize": "{{user `ramsize`}}",
         "numvcpus": "{{user `cpus`}}"
       }
