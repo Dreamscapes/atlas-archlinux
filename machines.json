@@ -24,16 +24,13 @@
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
-      "ssh_wait_timeout": "2m",
       "http_directory": "support",
       "headless": true,
-      "boot_wait": "5s",
       "boot_command": [
         "<enter><wait10><wait10>",
         "curl {{.HTTPIP}}:{{.HTTPPort}}/bootstrap.sh | bash<enter>"
       ],
       "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m",
       "disk_size": "{{user `disksize`}}",
       "hard_drive_interface": "sata",
       "vboxmanage": [
@@ -53,16 +50,13 @@
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
-      "ssh_wait_timeout": "2m",
       "http_directory": "support",
       "headless": true,
-      "boot_wait": "5s",
       "boot_command": [
         "<enter><wait10><wait10>",
         "curl {{.HTTPIP}}:{{.HTTPPort}}/bootstrap.sh | bash<enter>"
       ],
       "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m",
       "disk_size": "{{user `disksize`}}",
       "hard_drive_interface": "sata",
       "prlctl": [
@@ -81,16 +75,13 @@
       "iso_checksum": "{{user `isochecksum`}}",
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
-      "ssh_wait_timeout": "2m",
       "http_directory": "support",
       "headless": true,
-      "boot_wait": "5s",
       "boot_command": [
         "<enter><wait10><wait10>",
         "curl {{.HTTPIP}}:{{.HTTPPort}}/bootstrap.sh | bash<enter>"
       ],
       "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m",
       "disk_size": "{{user `disksize`}}",
       "disk_type_id": 0,
       "vmx_data": {

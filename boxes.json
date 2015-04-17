@@ -22,10 +22,8 @@
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2m",
       "headless": true,
-      "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m"
+      "shutdown_command": "{{user `shutdowncmd`}}"
     },
     {
       "type": "parallels-pvm",
@@ -36,11 +34,9 @@
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2m",
       "reassign_mac": true,
       "headless": true,
-      "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m"
+      "shutdown_command": "{{user `shutdowncmd`}}"
     },
     {
       "type": "vmware-vmx",
@@ -49,10 +45,8 @@
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2m",
       "headless": true,
-      "shutdown_command": "{{user `shutdowncmd`}}",
-      "shutdown_timeout": "2m"
+      "shutdown_command": "{{user `shutdowncmd`}}"
     }
   ],
   "provisioners": [
