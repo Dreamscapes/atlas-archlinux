@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### BOOTSTRAP ###
+### SYSTEM INSTALLATION ###
 
 # Partition disks with the following layout on a DOS partition table:
 # Device       Start   Size   Id  Type

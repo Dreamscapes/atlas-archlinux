@@ -119,7 +119,7 @@
     },
     {
       "type": "shell",
-      "script": "support/bootstrap.sh"
+      "script": "support/sys-install.sh"
     }
   ]
 }
