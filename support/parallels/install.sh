@@ -8,12 +8,19 @@ cd /
 mkdir -p /mnt/iso
 mount /tmp/prl-tools-lin.iso /mnt/iso
 
+# Patch the tools for Linux >=3.19
+cp -r /mnt/iso /tmp/prltools
+mkdir /tmp/kmods
+tar -xzf /tmp/prltools/kmods/prl_mod.tar.gz -C /tmp/kmods
+patch -p 0 -d /tmp -i /tmp/parallels/parallels-linux-3.19.diff
+tar -czf /tmp/prltools/kmods/prl_mod.tar.gz -C /tmp/kmods .
+
 # Persuade the installer that we are running a compatible Linux flavour
 ln -sf /usr/lib/systemd/scripts /etc/init.d
 export def_sysconfdir=/etc/init.d
 
 # Install!
-/mnt/iso/install --install-unattended
+/tmp/prltools/install --install-unattended
 
 # Configure systemd unit
 mv /tmp/parallels/parallels-tools.service /usr/lib/systemd/system/
