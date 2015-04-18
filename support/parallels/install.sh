@@ -22,8 +22,8 @@ systemctl enable parallels-tools.service
 
 # Cleanup
 umount /mnt/iso
-rm -rf /etc/init.d
 rm -rf /mnt/iso
+rm -rf /etc/init.d
 rm -rf /var/log/parallels.log # It contains my shared folders! I don't want you guys to see that!:)
 
 
