@@ -16,6 +16,7 @@ Alternatively, you can simply specify this box in your [Vagrantfile](https://doc
 
 > You may want to override your default provider by setting an environment variable:
 > `VAGRANT_DEFAULT_PROVIDER=parallels`
+>
 > The above will set Parallels Desktop to be your default virtualisation platform for Vagrant boxes
 
 ```ruby
