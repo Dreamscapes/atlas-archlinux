@@ -22,6 +22,7 @@ chmod -R 777 /tmp/open-vm-tools-dkms
 cd /tmp/open-vm-tools-dkms
 # Build and install! We must do this as non-root, otherwise makepkg will blow up
 su vagrant -c 'makepkg --syncdeps --clean --noconfirm --install'
+cd /
 
 # Enable some VMWare kernel modules
 mkdir -p /etc/modules-load.d
