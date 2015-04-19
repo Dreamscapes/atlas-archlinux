@@ -32,6 +32,10 @@ vmhgfs
 vmxnet3
 LIST
 
+# Prevent guest utilities from being upgraded (they might depend on newer kernel version and cause
+# unresolvable conflict)
+patch -p 0 -i /tmp/vmware/pacman.conf.diff
+
 
 ### Fixes for known errors ###
 
