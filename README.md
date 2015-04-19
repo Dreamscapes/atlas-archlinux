@@ -112,6 +112,11 @@ The following extra packages are installed to VMWare image:
 - [open-vm-tools](https://www.archlinux.org/packages/community/i686/open-vm-tools)
 - [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms)
 
+The following packages have been added to pacman upgrade blacklist:
+
+- open-vm-tools
+- open-vm-tools-dkms
+
 The following modules provided by the guest utilities are automatically loaded via */etc/modules-load.d/vmware.conf*:
 
 - `vmw_balloon`
