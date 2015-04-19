@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### KERNEL DOWNGRADE ###
+### KERNEL VERSION LOCK ###
 
 # Linux kernel seems to be a moving target when it comes to kernel modules - method signatures and
 # data structures change with almost every minor release, making it difficult for virtualisation
