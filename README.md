@@ -43,7 +43,7 @@ This is the only way to enjoy Arch Linux in a fully functional VM environment.
 ### OS info
 
 - x64 architecture
-- All drives are formatted as `ext4` on a MBR partition table
+- All drives are formatted as `btrfs` with lzo compression on a MBR partition table
 - Locale is set to `en_GB.UTF-8` (override with `localectl set-locale ???`)
 - Keyboard is set to `us` (override with `localectl set-keymap ???`)
 - Timezone is set to UTC
@@ -68,6 +68,7 @@ Only the minimum required to get you going has been installed. The following pac
 - base
 - base-devel
 - openssh
+- btrfs-progs
 
 The following packages have been added to pacman upgrade blacklist:
 
