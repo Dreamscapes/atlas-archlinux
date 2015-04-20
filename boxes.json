@@ -95,7 +95,7 @@
     [{
       "type": "vagrant",
       "output": "{{user `outdir`}}/Boxes/archlinux-{{.Provider}}.box",
-      "keep_input_artifact": false
+      "keep_input_artifact": true
     },
     {
       "type": "vagrant-cloud",
