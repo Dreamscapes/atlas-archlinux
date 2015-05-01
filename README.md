@@ -35,8 +35,8 @@ When it comes to Linux kernel modules, the kernel itself is a moving target - ev
 
 This is the only way to enjoy Arch Linux in a fully functional VM environment.
 
-- **Released kernel version: 3.18.6-1**
-- **Staged kernel version: 3.19.3-3**
+- **Released kernel version: 4.0.1-1**
+- **Staged kernel version: 4.0.1-1**
 
 > Staged kernel version is the version that will be available in the next Vagrant box version.
 
