@@ -29,7 +29,7 @@ Server = http://mirror.archlinux.no/$repo/os/$arch
 LIST
 
 # Install required system packages
-pacstrap /mnt base base-devel grub openssh btrfs-progs
+pacstrap /mnt btrfs-progs base base-devel grub openssh
 
 # Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
