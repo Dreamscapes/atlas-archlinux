@@ -8,12 +8,10 @@ cd /
 mkdir -p /mnt/iso
 mount /tmp/prl-tools-lin.iso /mnt/iso
 
-# Patch the tools for Linux >=3.19
+# Move the iso's contents to a writable location
 cp -r /mnt/iso /tmp/prltools
-mkdir /tmp/kmods
-tar -xzf /tmp/prltools/kmods/prl_mod.tar.gz -C /tmp/kmods
-patch -p 0 -d /tmp -i /tmp/parallels/parallels-linux-3.19.diff
-tar -czf /tmp/prltools/kmods/prl_mod.tar.gz -C /tmp/kmods .
+
+# Staging area for Parallels Tools patching - currently no patches needed.
 
 # Persuade the installer that we are running a compatible Linux flavour
 ln -sf /usr/lib/systemd/scripts /etc/init.d

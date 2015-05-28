@@ -101,7 +101,7 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities (provided by Parallels Desktop 10.1.4 build 28883)
+- Parallels Guest Utilities (provided by Parallels Desktop 10.2.1 build 29006)
 
 The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
 
