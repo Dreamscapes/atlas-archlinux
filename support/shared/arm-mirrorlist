@@ -4,4 +4,4 @@
 # Arch Linux follows a rolling release cycle (there are no "releases"), it might be difficult to
 # stick with a particular package's version due to compatibility issues etc. This helps with such
 # issues.
-Server = http://seblu.net/a/arm/2015/05/22/$repo/os/$arch
+Server = http://seblu.net/a/arm/2015/05/27/$repo/os/$arch
