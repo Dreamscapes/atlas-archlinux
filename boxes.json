@@ -31,7 +31,7 @@
       "source_path": "{{user `outdir`}}/VMs/parallels/archlinux-{{user `archversion`}}-base.pvm",
       "output_directory": "{{user `outdir`}}/parallels",
       "parallels_tools_flavor": "lin",
-      "parallels_tools_guest_path": "/tmp/prl-tools-lin.iso",
+      "parallels_tools_guest_path": "/tmp/prl-tools-{{.Flavor}}.iso",
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
