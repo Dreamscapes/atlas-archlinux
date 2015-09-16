@@ -22,10 +22,10 @@ mount -o defaults,compress=lzo,space_cache /dev/sda1 /mnt/boot
 # (we WILL restore the mirrorlist to the original one for the final VM)
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 cat <<'LIST' > /etc/pacman.d/mirrorlist
-Server = http://mirror.one.com/archlinux/$repo/os/$arch
+Server = http://mirror.archlinux.no/$repo/os/$arch
 Server = http://mirror.bytemark.co.uk/archlinux/$repo/os/$arch
 Server = http://lug.mtu.edu/archlinux/$repo/os/$arch
-Server = http://mirror.archlinux.no/$repo/os/$arch
+Server = http://mirror.one.com/archlinux/$repo/os/$arch
 LIST
 
 # Install required system packages
