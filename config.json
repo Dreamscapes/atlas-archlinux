@@ -1,6 +1,6 @@
 {
-  "archversion": "2015.08.01",
-  "isochecksum": "e98320cd5f0c346fff4140af0b5ffadd59849168",
+  "archversion": "2015.09.01",
+  "isochecksum": "4eb065d1b7639846703422a30c622eae0a558622",
   "isochecksumtype": "sha1",
-  "pathtoiso": "http://mirror.oss.maxcdn.com/archlinux/iso"
+  "pathtoiso": "http://archlinux.mirror.dkm.cz/pub/archlinux/iso"
 }
