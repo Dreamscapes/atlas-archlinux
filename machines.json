@@ -18,7 +18,7 @@
     {
       "type": "virtualbox-iso",
       "guest_os_type": "ArchLinux_64",
-      "output_directory": "{{user `outdir`}}/VMs/virtualbox",
+      "output_directory": "{{user `outdir`}}/pristine/virtualbox",
       "guest_additions_mode": "disable",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
       "vm_name": "archlinux-{{user `archversion`}}-base",
@@ -44,7 +44,7 @@
     {
       "type": "parallels-iso",
       "guest_os_type": "linux-2.6",
-      "output_directory": "{{user `outdir`}}/VMs/parallels",
+      "output_directory": "{{user `outdir`}}/pristine/parallels",
       "parallels_tools_mode": "disable",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
       "vm_name": "archlinux-{{user `archversion`}}-base",
@@ -69,7 +69,7 @@
     {
       "type": "vmware-iso",
       "guest_os_type": "other3xlinux-64",
-      "output_directory": "{{user `outdir`}}/VMs/vmware",
+      "output_directory": "{{user `outdir`}}/pristine/vmware",
       "iso_url": "{{user `pathtoiso`}}/{{user `archversion`}}/archlinux-{{user `archversion`}}-dual.iso",
       "vm_name": "archlinux-{{user `archversion`}}-base",
       "vmdk_name": "archlinux-{{user `archversion`}}-base",

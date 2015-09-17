@@ -17,8 +17,8 @@
   "builders": [
     {
       "type": "virtualbox-ovf",
-      "source_path": "{{user `outdir`}}/VMs/virtualbox/archlinux-{{user `archversion`}}-base.ovf",
-      "output_directory": "{{user `outdir`}}/virtualbox",
+      "source_path": "{{user `outdir`}}/pristine/virtualbox/archlinux-{{user `archversion`}}-base.ovf",
+      "output_directory": "{{user `outdir`}}/tainted/virtualbox",
       "guest_additions_mode": "disable",
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
@@ -28,8 +28,8 @@
     },
     {
       "type": "parallels-pvm",
-      "source_path": "{{user `outdir`}}/VMs/parallels/archlinux-{{user `archversion`}}-base.pvm",
-      "output_directory": "{{user `outdir`}}/parallels",
+      "source_path": "{{user `outdir`}}/pristine/parallels/archlinux-{{user `archversion`}}-base.pvm",
+      "output_directory": "{{user `outdir`}}/tainted/parallels",
       "parallels_tools_flavor": "lin",
       "parallels_tools_guest_path": "/tmp/prl-tools-{{.Flavor}}.iso",
       "vm_name": "archlinux-{{user `archversion`}}",
@@ -41,8 +41,8 @@
     },
     {
       "type": "vmware-vmx",
-      "source_path": "{{user `outdir`}}/VMs/vmware/archlinux-{{user `archversion`}}-base.vmx",
-      "output_directory": "{{user `outdir`}}/vmware",
+      "source_path": "{{user `outdir`}}/pristine/vmware/archlinux-{{user `archversion`}}-base.vmx",
+      "output_directory": "{{user `outdir`}}/tainted/vmware",
       "vm_name": "archlinux-{{user `archversion`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -94,7 +94,7 @@
   "post-processors": [
     [{
       "type": "vagrant",
-      "output": "{{user `outdir`}}/Boxes/archlinux-{{.Provider}}.box",
+      "output": "{{user `outdir`}}/packed/archlinux-{{.Provider}}.box",
       "keep_input_artifact": true
     },
     {
