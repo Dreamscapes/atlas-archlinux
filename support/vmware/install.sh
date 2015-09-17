@@ -8,20 +8,18 @@ cd /
 cat /proc/version > /etc/arch-release
 
 # Install guest utils
-pacman -S --noconfirm open-vm-tools unzip
+pacman -S --noconfirm open-vm-tools
 
 # Enable the service
 systemctl enable vmtoolsd.service
 
-# Install shared folders support
-# This package is no longer available on AUR, but I found the source code in Github, so let's try
-# to compile it from master...
-curl -o /tmp/open-vm-tools-dkms.zip \
-  https://codeload.github.com/davispuh/open-vm-tools-dkms/zip/master
+# Install shared folders support from AUR
+curl -o /tmp/open-vm-tools-dkms.tar.gz \
+  https://aur.archlinux.org/packages/op/open-vm-tools-dkms/open-vm-tools-dkms.tar.gz
 # Extract...
-unzip /tmp/open-vm-tools-dkms.zip -d /tmp/
-chmod -R 777 /tmp/open-vm-tools-dkms-master
-cd /tmp/open-vm-tools-dkms-master
+tar -xf /tmp/open-vm-tools-dkms.tar.gz -C /tmp
+chmod -R 777 /tmp/open-vm-tools-dkms
+cd /tmp/open-vm-tools-dkms
 # Build and install! We must do this as non-root, otherwise makepkg will blow up
 su vagrant -c 'makepkg --syncdeps --clean --noconfirm --install'
 cd /
@@ -51,9 +49,6 @@ LIST
 
 
 ### Finalise... ###
-
-# Uninstall unzip
-pacman -R --nosave --noconfirm unzip
 
 # Regenerate ramdisk
 mkinitcpio -p linux
