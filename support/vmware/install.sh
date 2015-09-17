@@ -15,7 +15,7 @@ systemctl enable vmtoolsd.service
 
 # Install shared folders support from AUR
 curl -o /tmp/open-vm-tools-dkms.tar.gz \
-  https://aur.archlinux.org/packages/op/open-vm-tools-dkms/open-vm-tools-dkms.tar.gz
+  https://aur.archlinux.org/cgit/aur.git/snapshot/open-vm-tools-dkms.tar.gz
 # Extract...
 tar -xf /tmp/open-vm-tools-dkms.tar.gz -C /tmp
 chmod -R 777 /tmp/open-vm-tools-dkms
