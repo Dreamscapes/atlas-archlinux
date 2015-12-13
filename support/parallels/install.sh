@@ -2,6 +2,31 @@
 
 cd /
 
+### Dependencies installation ###
+
+# Set pacman repository to point to the ARM because dkms depends on Linux headers
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+mv /tmp/arm-mirrorlist /etc/pacman.d/mirrorlist
+
+# Install dkms
+pacman -Syy --noconfirm dkms
+
+# Restore pacman mirrorlist and refresh databases
+rm /etc/pacman.d/mirrorlist
+mv /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
+pacman -Syy
+
+# Install multipath-tools because Parallels Tools requires kpartx
+curl -o /tmp/multipath-tools.tar.gz \
+  https://aur.archlinux.org/cgit/aur.git/snapshot/multipath-tools.tar.gz
+# Extract...
+tar -xf /tmp/multipath-tools.tar.gz -C /tmp
+chmod -R 777 /tmp/multipath-tools
+cd /tmp/multipath-tools
+# Build and install! We must do this as non-root, otherwise makepkg will blow up
+su vagrant -c 'makepkg --syncdeps --clean --noconfirm --install'
+cd /
+
 ### Parallels Tools installation ###
 
 # Mount the iso

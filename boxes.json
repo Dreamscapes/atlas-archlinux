@@ -55,7 +55,7 @@
       "type": "file",
       "source": "support/shared/arm-mirrorlist",
       "destination": "/tmp/arm-mirrorlist",
-      "only": [ "virtualbox-ovf" ]
+      "only": [ "virtualbox-ovf", "parallels-pvm" ]
     },
     {
       "type": "file",

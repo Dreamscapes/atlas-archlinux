@@ -101,7 +101,9 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities (provided by Parallels Desktop 10.2.1 build 29006)
+- Parallels Guest Utilities (provided by Parallels Desktop 11.1.1 build 32312)
+- dkms (Required by Guest Utilities)
+- multipath-tools (AUR) (Required by Guest Utilities for kpartx)
 
 The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
 
