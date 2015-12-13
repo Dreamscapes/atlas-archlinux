@@ -29,3 +29,6 @@ pacman -S --clean --clean --noconfirm
 
 # Do not modify ls and prompts for all new users
 patch -p 0 -i /root/shared/bashrc.diff
+
+# Create initial mandb database (recommended by man-db package)
+mandb --quiet
