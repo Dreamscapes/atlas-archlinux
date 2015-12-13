@@ -4,9 +4,9 @@
 
 # Partition disks with the following layout on a DOS partition table:
 # Device       Start   Size   Id  Type
-# /dev/sda1     2048   100M   83  Linux
-# /dev/sda2   206848    ???   83  Linux
-echo -e "o\n  n\n p\n \n \n +100M\n  n\n p\n \n \n \n  w" | fdisk /dev/sda
+# /dev/sda1     2048   200M   83  Linux
+# /dev/sda2   411648    ???   83  Linux
+echo -e "o\n  n\n p\n \n \n +200M\n  n\n p\n \n \n \n  w" | fdisk /dev/sda
 
 # Format filesystems
 mkfs.btrfs --label boot /dev/sda1
