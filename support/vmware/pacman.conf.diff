@@ -8,7 +8,7 @@ up-to-date, it is best that we prevent the guest utils from being upgraded durin
 
  # Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
 -IgnorePkg    = linux linux-firmware linux-headers
-+IgnorePkg    = linux linux-firmware linux-headers open-vm-tools open-vm-tools-dkms
++IgnorePkg    = linux linux-firmware linux-headers open-vm-tools
  #IgnoreGroup =
 
  #NoUpgrade   =

@@ -114,23 +114,22 @@ The following kernel modules have been disabled via */etc/modprobe.d/blacklist.c
 The following extra packages are installed to VMWare image:
 
 - [open-vm-tools](https://www.archlinux.org/packages/community/i686/open-vm-tools)
-- [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms)
 
 The following packages have been added to pacman upgrade blacklist:
 
 - open-vm-tools
-- open-vm-tools-dkms
 
 The following modules provided by the guest utilities are automatically loaded via */etc/modules-load.d/vmware.conf*:
 
 - `vmw_balloon`
-- `vmhgfs`
 - `vmxnet3`
 
 The following kernel modules have been disabled via */etc/modprobe.d/blacklist.conf*:
 
 - `i2c_piix4`
 - `intel_rapl`
+
+> Shared folders support is enabled via Fuse. See [Arch Linux Wiki](https://wiki.archlinux.org/index.php/VMware/Installing_Arch_as_a_guest#Shared_Folders_with_vmhgfs-fuse_utility) for instructions about mounting a shared folder if the Vagrant plugin fails to mount it automatically.
 
 ## Building the machines locally
 
