@@ -35,8 +35,8 @@ When it comes to Linux kernel modules, the kernel itself is a moving target - ev
 
 This is the only way to enjoy Arch Linux in a fully functional VM environment.
 
-- **Released kernel version: 4.2.5-1**
-- **Staged kernel version: 4.2.5-1**
+- **Released kernel version: 4.3.3-2**
+- **Staged kernel version: 4.3.3-2**
 
 > Staged kernel version is the version that will be available in the next Vagrant box version.
 
@@ -101,7 +101,7 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities (provided by Parallels Desktop 11.1.1 build 32312)
+- Parallels Guest Utilities (provided by Parallels Desktop 11.1.2 build 32408)
 - dkms (Required by Guest Utilities)
 - multipath-tools (AUR) (Required by Guest Utilities for kpartx)
 
