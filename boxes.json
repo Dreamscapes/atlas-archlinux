@@ -36,7 +36,6 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "reassign_mac": true,
-      "headless": true,
       "shutdown_command": "{{user `shutdowncmd`}}"
     },
     {

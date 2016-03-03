@@ -52,7 +52,6 @@
       "iso_checksum_type": "{{user `isochecksumtype`}}",
       "ssh_username": "root",
       "http_directory": "support",
-      "headless": true,
       "boot_command": [
         "<enter><wait10><wait10>",
         "curl {{.HTTPIP}}:{{.HTTPPort}}/bootstrap.sh | bash<enter>"
