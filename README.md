@@ -98,7 +98,7 @@ The following modules provided by the guest utilities are automatically loaded v
 
 The following extra packages are installed to Parallels image:
 
-- Parallels Guest Utilities (provided by Parallels Desktop 11.1.2 build 32408)
+- Parallels Guest Utilities (provided by Parallels Desktop 11.2.0 build 32581)
 - dkms (Required by Guest Utilities)
 - multipath-tools (AUR) (Required by Guest Utilities for kpartx)
 
