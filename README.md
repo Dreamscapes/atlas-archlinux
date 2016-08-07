@@ -35,7 +35,7 @@ When it comes to Linux kernel modules, the kernel itself is a moving target - ev
 
 This is the only way to enjoy Arch Linux in a fully functional VM environment.
 
-- **Kernel version: 4.5.4-1**
+- **Kernel version: 4.6.4-1**
 
 ### OS info
 
