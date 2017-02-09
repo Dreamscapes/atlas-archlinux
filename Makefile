@@ -14,3 +14,8 @@ machines:
 
 boxes: machines
 	packer build -var-file config.json boxes.json
+
+clean:
+	@rm -r packer_cache
+
+.PHONY: machines boxes clean
