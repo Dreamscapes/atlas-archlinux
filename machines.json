@@ -99,7 +99,10 @@
     },
     {
       "type": "shell",
-      "script": "support/sys-install.sh"
+      "script": "support/sys-install.sh",
+      "environment_vars": [
+        "ARCH_VERSION={{user `archversion`}}"
+      ]
     }
   ]
 }

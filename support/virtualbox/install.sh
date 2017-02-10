@@ -4,13 +4,8 @@ cd /
 
 ### VirtualBox Guest Utils installation ###
 
-# Set pacman repository to point to the ARM because VirtualBox requires the most recent kernel
-# available for Arch Linux
-mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-mv /tmp/arm-mirrorlist /etc/pacman.d/mirrorlist
-
 # Install VirtualBox Guest Utils without X.Org support
-pacman -Syy --noconfirm virtualbox-guest-utils-nox
+pacman -S --noconfirm virtualbox-guest-utils-nox
 
 # Enable VirtualBox kernel modules
 mkdir -p /etc/modules-load.d
@@ -23,11 +18,6 @@ LIST
 # Prevent guest utilities from being upgraded (they might depend on newer kernel version and cause
 # unresolvable conflict)
 patch -p 0 -i /tmp/virtualbox/pacman.conf.diff
-
-# Restore pacman mirrorlist and refresh databases
-rm /etc/pacman.d/mirrorlist
-mv /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
-pacman -Syy
 
 
 ### Fixes for known errors ###

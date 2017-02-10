@@ -4,17 +4,8 @@ cd /
 
 ### Dependencies installation ###
 
-# Set pacman repository to point to the ARM because dkms depends on Linux headers
-mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-mv /tmp/arm-mirrorlist /etc/pacman.d/mirrorlist
-
 # Install dkms
-pacman -Syy --noconfirm dkms
-
-# Restore pacman mirrorlist and refresh databases
-rm /etc/pacman.d/mirrorlist
-mv /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist
-pacman -Syy
+pacman -S --noconfirm dkms
 
 # Install multipath-tools because Parallels Tools requires kpartx
 curl -o /tmp/multipath-tools.tar.gz \

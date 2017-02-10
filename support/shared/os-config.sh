@@ -27,6 +27,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Clean all downloaded packages and caches to save as much space as possible
 pacman -S --clean --clean --noconfirm
 
+# Blacklist kernel and headers from upgrades
+patch -p 0 -i /root/shared/pacman.conf.diff
+
 # Do not modify ls and prompts for all new users
 patch -p 0 -i /root/shared/bashrc.diff
 
