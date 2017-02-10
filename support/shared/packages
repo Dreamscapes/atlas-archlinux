@@ -1,0 +1,6 @@
+btrfs-progs
+base
+base-devel
+grub
+openssh
+bash-completion

@@ -46,7 +46,9 @@ Server = https://ala.seblu.net/repos/$(echo $ARCH_VERSION | sed -e 's/\./\//g')/
 MIRRORLIST
 
 # Install required system packages
-pacstrap /mnt btrfs-progs base base-devel grub openssh
+packages=""
+for package in $(cat /tmp/shared/packages); do packages="${packages} ${package}"; done
+pacstrap /mnt $packages
 
 # Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
