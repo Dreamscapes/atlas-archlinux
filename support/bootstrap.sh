@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit -o pipefail
+
 ### INSTALLATION BOOTSTRAP ###
 
 # The purpose of this file is to enable ssh service with a passwordless root account for Packer.

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit -o pipefail
+
 ### SYSTEM INSTALLATION ###
 
 # Partition disks with the following layout on a DOS partition table:

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit -o pipefail
+
 ### VAGRANT CONFIGURATION ###
 
 # Create 'vagrant' user (public key will be uploaded by Packer)

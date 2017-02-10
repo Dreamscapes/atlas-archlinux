@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit -o pipefail
+
 ### SYSTEM CONFIGURATION ###
 
 # Localisation stuff...
