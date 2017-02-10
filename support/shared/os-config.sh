@@ -14,7 +14,7 @@ echo LANG=en_GB.UTF-8 > /etc/locale.conf
 echo KEYMAP=us > /etc/vconsole.conf
 
 # Configure timezone to UTC - a sane default, I believe...
-ln -s /usr/share/zoneinfo/UTC /etc/localtime
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # Enable required services
 systemctl enable dhcpcd.service
